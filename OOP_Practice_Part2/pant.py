@@ -1,24 +1,23 @@
-### TODO:
-#   - code a Pants class with the following attributes
-#   - color (string) eg 'red', 'yellow', 'orange'
-#   - waist_size (integer) eg 8, 9, 10, 32, 33, 34
-#   - length (integer) eg 27, 28, 29, 30, 31
-#   - price (float) eg 9.28
+class Pants:
+    def __init__(self,color,waist_size,length,price):
+        self.color = color
+        self.waist_size = waist_size
+        self.length = length
+        self.price = price 
 
-### TODO: Declare the Pants Class 
+    def __str__(self):
+        return f'{self.color}'
 
-### TODO: write an __init__ function to initialize the attributes
+    def __len__(self):
+        return self.waist_size
 
-### TODO: write a change_price method:
-#    Args:
-#        new_price (float): the new price of the shirt
-#    Returns:
-#        None
+    def change_price(self,new_price):
+        self.price = new_price 
 
-### TODO: write a discount method:
-#    Args:
-#        discount (float): a decimal value for the discount. 
-#            For example 0.05 for a 5% discount.
-#
-#    Returns:
-#        float: the discounted price
+    def discount(self, percentage):
+        return self.price * (1 - percentage)
+
+
+pant1 = Pants('red', 35, 36, 15.33)
+print(str(pant1))
+print(len(pant1))
